@@ -31,7 +31,7 @@ CHECK(year_release >= '2000-01-01' AND year_release <= '2022-12-31');
 
 CREATE TABLE IF NOT EXISTS ExecutorAlbum(
 	executorid INT REFERENCES Executor(id),
-	albumid INT REFERENCES Genre(id),
+	albumid INT REFERENCES Album(id),
 	CONSTRAINT ea PRIMARY KEY (executorid, albumid)
 );
 
