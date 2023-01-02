@@ -40,12 +40,12 @@ CREATE TABLE IF NOT EXISTS Track(
 	id serial NOT NULL PRIMARY KEY,
 	TrackName VARCHAR(30) NOT NULL,
 	albumid INT REFERENCES Album(id),
-	track_lenght INTEGER,
-	CHECK (track_lenght < 5)
+	duration_track TIME NOT NULL
 );
 
-
-
+ALTER TABLE Track
+ADD CONSTRAINT check_duration
+CHECK(duration_track <= '00:10:00');
 
 
 CREATE TABLE IF NOT EXISTS Collection(
